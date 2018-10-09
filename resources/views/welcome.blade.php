@@ -18,6 +18,9 @@
     <body>
         <div id="app" class="jumbotron">
             <div class="container">
+                <div v-if="errorQuery" class="alert alert-danger" role="alert">
+                    Значение не может быть пустым
+                </div>
                 <form class="search"></form>
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
