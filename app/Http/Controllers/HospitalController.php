@@ -6,6 +6,7 @@ use App\Hospital;
 
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
+use DB;
 
 class HospitalController extends Controller
 {
@@ -22,9 +23,10 @@ class HospitalController extends Controller
     public function byName(Request $request)
     {
         $match = $request['search-value'];
-        $result = Hospital::where('title', 'like', '%'.$match.'%')
+        $result = Hospital::where('title', 'like','% '.$match.'%') //RLIKE '[[:<:]]".$sub."
+                ->orWhere('title', 'like', $match.'%')
                 ->paginate(15);
-                
+
         return response()
             ->json($result);
             

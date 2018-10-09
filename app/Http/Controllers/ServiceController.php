@@ -22,7 +22,9 @@ class ServiceController extends Controller
     public function byName(Request $request)
     {
         $match = $request['search-value'];
-        $result = Service::where('title', 'like', '%'.$match.'%')
+        $result = Service::where('title', 'like', '% '.$match.'%')
+                ->orWhere('title', 'like', '%-'.$match.'%')
+                ->orWhere('title', 'like', $match.'%')
                 ->paginate(15);
                 
         return response()
