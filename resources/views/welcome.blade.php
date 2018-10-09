@@ -40,14 +40,14 @@
 
                     <!--doctors-->
                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"> 
-                        <h3>Доктора
+                        <h3 class="d-flex justify-content-center">Доктора
                             <span v-if=afterquery class="badge badge-info"> @{{ doctors.total }}
                             </span>
                         </h3>
-                        <div v-if=afterquery class="test" v-for="item in doctorsitems">
+                        <div v-if=afterquery class="list-group-item" v-for="item in doctorsitems">
                             @{{ item.surname }}  @{{ item.name }} @{{ item.patronymic }}
                         </div>
-                        <div v-if=afterquery> 
+                        <div v-if=afterquery class="d-flex justify-content-center btn-group"> 
                             
                             <button type="submit" class="btn btn-info" v-on:click="pageDoctorsSearch(doctors.first_page_url)"><<</button>
                             <button type="submit" class="btn btn-info" v-on:click="pageDoctorsSearch(doctors.prev_page_url)"><</button>
@@ -60,15 +60,15 @@
 
                     <!--hospitals-->                
                     <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5"> 
-                        <h3>Больницы
+                        <h3 class="d-flex justify-content-center">Больницы
                             <span v-if=afterquery class="badge badge-info"> @{{ hospitals.total }}
                             </span>
                         </h3>
 
-                        <div v-if=afterquery class="test" v-for="item in hospitalsitems">
+                        <div v-if=afterquery class="list-group-item" v-for="item in hospitalsitems">
                             @{{ item.title }}
                         </div>
-                        <div v-if=afterquery> 
+                        <div v-if=afterquery class="d-flex justify-content-center btn-group"> 
                             
                             <button type="submit" class="btn btn-info" v-on:click="pageHospitalsSearch(hospitals.first_page_url)"><<</button>
                             <button type="submit" class="btn btn-info" v-on:click="pageHospitalsSearch(hospitals.prev_page_url)"><</button>
@@ -79,15 +79,15 @@
                         </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3"> 
-                        <h3>Услуги
+                        <h3 class="d-flex justify-content-center">Услуги
                             <span v-if=afterquery class="badge badge-info"> @{{ services.total }}
                             </span>
                         </h3>
 
-                        <div v-if=afterquery class="test" v-for="item in servicesitems">
+                        <div v-if=afterquery class="list-group-item" v-for="item in servicesitems">
                             @{{ item.title }}
                         </div>
-                        <div v-if=afterquery> 
+                        <div v-if=afterquery class="d-flex justify-content-center btn-group"> 
                             
                             <button type="submit" class="btn btn-info" v-on:click="pageServicesSearch(services.first_page_url)"><<</button>
                             <button type="submit" class="btn btn-info" v-on:click="pageServicesSearch(services.prev_page_url)"><</button>
